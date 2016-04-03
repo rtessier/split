@@ -1,5 +1,5 @@
 import React from 'react'
-import AddBill from './AddBill'
+import AddBill from '../containers/AddBill'
 import HousematesList from '../containers/HousematesList'
 import TransactionsList from '../containers/TransactionsList'
 

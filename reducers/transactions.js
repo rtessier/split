@@ -2,15 +2,19 @@ import _ from 'lodash'
 
 function reduceTransactions(state = [], action) {
   switch (action.type) {
+    case 'ADD_BILL':
+      return _.union(state, [
+        { from: 'You', amount: action.amount }
+      ])
+      break;
     case 'PAYMENT_RECEIVED':
-      let updatedTransactions = _.union(state, [
+      return _.union(state, [
         { from: action.from, amount: action.amount }
       ])
-      return updatedTransactions;
-      break;
+      break
   }
 
-  return state;
+  return state
 }
 
 export default reduceTransactions
