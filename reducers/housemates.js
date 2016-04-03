@@ -7,7 +7,15 @@ const defaultHousemates = [
 function reduceHousemates(state = defaultHousemates, action) {
   switch (action.type) {
     case 'PAYMENT_RECEIVED':
-      console.log(`Adding ${action.amount} to balance for ${action.from}`)
+      console.log(`Removing $${action.amount} from ${action.from}'s balance`)
+      let updatedHousemates = state.map(housemate => {
+        let newBalance = housemate.amount
+        if (action.from === housemate.name) {
+          newBalance = newBalance - action.amount
+        }
+        return { name: housemate.name, amount: newBalance }
+      })
+      return updatedHousemates;
       break;
   }
 
