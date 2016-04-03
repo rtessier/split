@@ -15,7 +15,7 @@ class Housemate extends Component {
   }
 
   onPaymentReceived() {
-    this.props.onPaymentReceived(this.props.name, parseInt(this.refs.paymentAmount.value))
+    this.props.onPaymentReceived(this.props.name, parseFloat(this.refs.paymentAmount.value))
   }
 
   renderBalanceStatus() {

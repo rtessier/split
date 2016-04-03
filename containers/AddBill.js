@@ -16,7 +16,7 @@ class AddBill extends Component {
   }
 
   onAddBill() {
-    this.props.addBill(parseInt(this.refs.billAmount.value))
+    this.props.addBill(parseFloat(this.refs.billAmount.value))
   }
 }
 
