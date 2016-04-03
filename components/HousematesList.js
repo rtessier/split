@@ -5,7 +5,6 @@ class HousematesList extends Component {
   render() {
     let defaultHousemates = [
       { name: 'Link', amount: 0.00 },
-      { name: 'Link', amount: 0.00 },
       { name: 'Ganon', amount: -50.00 },
     ]
     return (
