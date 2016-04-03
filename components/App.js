@@ -1,7 +1,7 @@
 import React from 'react'
 import AddBill from './AddBill'
 import HousematesList from '../containers/HousematesList'
-import TransactionsList from './TransactionsList'
+import TransactionsList from '../containers/TransactionsList'
 
 const App = () => (
   <div>
