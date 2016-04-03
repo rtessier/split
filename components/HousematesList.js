@@ -9,17 +9,19 @@ class HousematesList extends Component {
       { name: 'Gannon', amount: -50.00 },
     ]
     return (
-      <ul>
-        {defaultHousemates.map(housemate =>
-          <li>
-            <Housemate
-              key={housemate.name}
-              name={housemate.name}
-              amount={housemate.amount}
-              />
-          </li>
-        )}
-      </ul>
+      <div>
+        <h1>Current Balances</h1>
+        <ul>
+          {defaultHousemates.map(housemate =>
+            <li key={housemate.name}>
+              <Housemate
+                name={housemate.name}
+                amount={housemate.amount}
+                />
+            </li>
+          )}
+        </ul>
+      </div>
     );
   }
 }
