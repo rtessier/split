@@ -5,6 +5,7 @@ import TransactionsList from './TransactionsList'
 
 const App = () => (
   <div>
+    <h1>Split</h1>
     <AddBill />
     <HousematesList />
     <TransactionsList />

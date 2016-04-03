@@ -9,7 +9,7 @@ class HousematesList extends Component {
     ]
     return (
       <div>
-        <h1>Balances</h1>
+        <h2>Balances</h2>
         <ul>
           {defaultHousemates.map(housemate =>
             <li key={housemate.name}>
