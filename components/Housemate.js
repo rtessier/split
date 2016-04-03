@@ -5,12 +5,17 @@ class Housemate extends Component {
     return (
       <div>
         <div>{this.props.name} {this.renderBalanceStatus()}</div>
-        <input />
-        <button onClick={this.props.onPaymentReceived}>
+        <input ref='paymentAmount' />
+        <button
+          onClick={this.onPaymentReceived.bind(this)}>
             Payment received
         </button>
       </div>
     )
+  }
+
+  onPaymentReceived() {
+    this.props.onPaymentReceived(this.props.name, this.refs.paymentAmount.value)
   }
 
   renderBalanceStatus() {

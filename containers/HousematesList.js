@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addBill } from '../actions/index'
+import { paymentReceived } from '../actions/paymentReceived'
 import Housemate from '../components/Housemate'
 
 class HousematesList extends Component {
@@ -14,7 +14,7 @@ class HousematesList extends Component {
             <li
               key={housemate.name}>
               <Housemate
-                onPaymentReceived={this.paymentReceived}
+                onPaymentReceived={this.paymentReceived.bind(this)}
                 name={housemate.name}
                 amount={housemate.amount}
                 />
@@ -25,8 +25,8 @@ class HousematesList extends Component {
     )
   }
 
-  paymentReceived(event) {
-    console.log('Payment received. Event: ', event)
+  paymentReceived(from, amount) {
+    this.props.paymentReceived(from, amount)
   }
 }
 
@@ -37,7 +37,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addBill: addBill }, dispatch)
+  return {
+    paymentReceived: (from, amount) => {
+      dispatch(paymentReceived(from, amount))
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HousematesList)

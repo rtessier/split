@@ -5,7 +5,13 @@ const defaultHousemates = [
 ]
 
 function reduceHousemates(state = defaultHousemates, action) {
-  return state
+  switch (action.type) {
+    case 'PAYMENT_RECEIVED':
+      console.log(`Adding ${action.amount} to balance for ${action.from}`)
+      break;
+  }
+
+  return state;
 }
 
 export default reduceHousemates
