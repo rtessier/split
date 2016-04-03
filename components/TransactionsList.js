@@ -7,9 +7,9 @@ class TransactionsList extends Component {
         <h1>Transactions</h1>
         <div>
           <ul>
-            <li>Ryan paid gas bill: $44.88</li>
-            <li>Wayne paid Ryan for gas bill: $11.22</li>
-            <li>Darren paid Ryan for gas bill: $11.22</li>
+            <li>Ryan paid bill: $44.88</li>
+            <li>Wayne paid Ryan: $11.22</li>
+            <li>Darren paid Ryan: $11.22</li>
           </ul>
         </div>
       </div>
