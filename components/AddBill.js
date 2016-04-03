@@ -5,7 +5,7 @@ export default class AddBill extends Component {
     return (
       <div>
         <input />
-        <button>Add Bill</button>
+        <button>Add a bill</button>
       </div>
     );
   }
