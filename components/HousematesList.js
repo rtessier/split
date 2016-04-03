@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Housemate from './Housemate';
+import React, { Component } from 'react'
+import Housemate from './Housemate'
 
 class HousematesList extends Component {
   render() {
@@ -21,8 +21,8 @@ class HousematesList extends Component {
           )}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default HousematesList;
+export default HousematesList

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class AddBill extends Component {
   render() {
@@ -7,6 +7,6 @@ export default class AddBill extends Component {
         <input />
         <button>Add a bill</button>
       </div>
-    );
+    )
   }
 }
