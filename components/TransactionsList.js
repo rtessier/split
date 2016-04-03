@@ -15,7 +15,8 @@ class TransactionsList extends Component {
         <div>
           <ul>
             {defaultTransactions.map(transaction =>
-              <li>
+              <li
+                key={`${transaction.description}: ${transaction.amount}`}>
                 <Transaction
                   description={transaction.description}
                   amount={transaction.amount}
