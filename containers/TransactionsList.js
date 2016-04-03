@@ -5,35 +5,35 @@ import Transaction from '../components/Transaction'
 
 class TransactionsList extends Component {
   render() {
-console.log('Rerendering...', this.props)
-    if (this.props.transactions.length > 0) {
-      return (
-        <div>
-          <h2>Transactions</h2>
-          <div>
-            <ul>
-              {this.props.transactions.map(transaction =>
-                <li
-                  key={`${transaction.from}: ${transaction.amount}`}>
-                  <Transaction
-                    from={transaction.from}
-                    amount={transaction.amount}
-                    />
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-      )
-    }
-
     return (
       <div>
         <h2>Transactions</h2>
-        <span>No transactions</span>
+        {renderTransactionsList.bind(this)()}
       </div>
     )
   }
+}
+
+function renderTransactionsList() {
+  if (this.props.transactions.length > 0) {
+    return (
+      <ul>
+        {this.props.transactions.map(transaction =>
+          <li
+            key={`${transaction.from}: ${transaction.amount}`}>
+            <Transaction
+              from={transaction.from}
+              amount={transaction.amount}
+              />
+          </li>
+        )}
+      </ul>
+    )
+  }
+
+  return (
+    <span>No transactions</span>
+  )
 }
 
 function mapStateToProps(state) {
