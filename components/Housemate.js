@@ -15,12 +15,12 @@ class Housemate extends Component {
   }
 
   onPaymentReceived() {
-    this.props.onPaymentReceived(this.props.name, parseFloat(this.refs.paymentAmount.value))
+    this.props.onPaymentReceived(this.props.name, Number(this.refs.paymentAmount.value))
   }
 
   renderBalanceStatus() {
     let status = "owes"
-    let amount = this.props.amount
+    let amount = this.props.amount.toFixed(2)
 
     if (this.props.amount < 0) {
       status = "gets back"
